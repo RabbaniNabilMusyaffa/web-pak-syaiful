@@ -4,7 +4,14 @@
 
 @section('content')
 
+    @if (Session::has('message'))
+        <div class="alert alert-success">
+            {{Session::get('message')}}
+        </div>
+    @endif
+
 <div class="row">
+
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">

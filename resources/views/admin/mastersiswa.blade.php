@@ -15,7 +15,12 @@
         <div class="alert alert-success">
           {{Session::get('message')}}
         </div>
+        @elseif (Session::has('validation'))
+        <div class="alert alert-danger">
+          {{Session::get('validation')}}
+        </div>
     @endif
+
 
     <div class="card-body w-100 d-flex justify-content-between">
       <table class="table">

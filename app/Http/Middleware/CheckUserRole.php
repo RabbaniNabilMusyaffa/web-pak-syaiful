@@ -18,11 +18,10 @@ class CheckUserRole
     {
         if (in_array($request->user()->role, $role)) {
             return $next($request);
-        }
+        } 
 
         if ($request->user()->role === 'user') {
-
-            return redirect()->back()->with('message', 'Anda tidak memiliki hak akses yang valid');
+            return redirect()->back()->with('validation', 'Anda tidak memiliki hak akses yang valid');
         } else {
             return $next($request);
         }

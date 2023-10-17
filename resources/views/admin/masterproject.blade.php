@@ -5,10 +5,14 @@
 @section('content')
 
 @if (Session::has('message'))
-<div class="alert alert-success">
-  {{Session::get('message')}}
-</div>
-@endif
+        <div class="alert alert-success">
+          {{Session::get('message')}}
+        </div>
+        @elseif (Session::has('validation'))
+        <div class="alert alert-danger">
+          {{Session::get('validation')}}
+        </div>
+    @endif
 
 <div class="row">
   <div class="col-lg-5">
